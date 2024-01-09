@@ -18,7 +18,7 @@
     "require": {
         "php": "^8.2"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "beta",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
