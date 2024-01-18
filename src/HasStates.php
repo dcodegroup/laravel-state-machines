@@ -2,6 +2,7 @@
 
 namespace Dcodegroup\StateMachines;
 
+use Dcodegroup\StateMachines\Exceptions\StatusNotFoundException;
 use Dcodegroup\StateMachines\Models\Status;
 use Dcodegroup\StateMachines\Models\Statusable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -14,7 +15,7 @@ trait HasStates
     public static function bootHasStates()
     {
         static::created(function ($model) {
-            self::createDefaultState($model);
+            self::setDefaultState($model);
         });
     }
 
@@ -30,20 +31,34 @@ trait HasStates
         return $this->belongsTo(Status::class);
     }
 
-    protected static function createDefaultState($model)
+    /**
+     * @param  string  $machineName
+     * @return void
+     * @throws StatusNotFoundException
+     */
+    public function setStatus(string $machineName)
+    {
+        $status = Status::findByMachineName($machineName);
+
+        if (! $status) {
+            throw new StatusNotFoundException("The status $machineName could not be found.");
+        }
+
+        Statusable::create([
+            'status_id' => $status->id,
+            'statusable_id' => $this->id,
+            'statusable_type' => self::class,
+        ]);
+
+        $this->update(['status_id', $status->id]);
+    }
+
+    protected static function setDefaultState($model)
     {
         if (! self::$defaultState) {
             return;
         }
 
-        $status = Status::where('machine_name', self::$defaultState)->first();
-
-        Statusable::create([
-            'status_id' => $status->id,
-            'statusable_id' => $model->id,
-            'statusable_type' => self::class,
-        ]);
-
-        $model->update(['status_id', $status->id]);
+        $model->setStatus(self::$defaultState);
     }
 }
