@@ -27,5 +27,12 @@
     },
     "config": {
         "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dcodegroup\\StateMachines\\StateMachineServiceProvider"
+            ]
+        }
     }
 }
