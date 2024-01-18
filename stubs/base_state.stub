@@ -1,0 +1,13 @@
+<?php
+
+namespace App\StateMachines\{{ pluralName }};
+
+use App\Models\{{ model }};
+use Exception;
+
+class Base{{ model }}State implements {{ model }}StateContract
+{
+    public function __construct(public {{ model }} ${{ name }}) {}
+
+{{ transition_methods }}
+}

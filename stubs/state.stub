@@ -1,0 +1,7 @@
+<?php
+
+namespace App\StateMachines\{{ pluralName }};
+
+class {{ stateName }}State extends Base{{ model }}State
+{
+}
