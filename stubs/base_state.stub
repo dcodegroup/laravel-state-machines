@@ -3,7 +3,7 @@
 namespace App\StateMachines\{{ pluralName }};
 
 use App\Models\{{ model }};
-use Exception;
+use Dcodegroup\StateMachines\Exceptions\CannotTransitionToStateException;
 
 class Base{{ model }}State implements {{ model }}StateContract
 {

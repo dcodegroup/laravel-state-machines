@@ -29,7 +29,7 @@ trait CreatesBaseClass
             foreach ($value as $key => $subValue) {
                 $transitions .= "    public function $subValue()\n";
                 $transitions .= "    {\n";
-                $transitions .= "        throw new Exception();\n";
+                $transitions .= "        throw new CannotTransitionToStateException();\n";
                 $transitions .= "    }\n\n";
             }
 
