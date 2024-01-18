@@ -8,7 +8,7 @@ trait CreatesBaseClass
 {
     protected function createBaseClass(string $directory, string $model, array $data)
     {
-        $content = File::get(resource_path(__DIR__."/../../stubs/base_state.stub"));
+        $content = File::get(__DIR__."/../../../stubs/base_state.stub");
 
         foreach ($data as $key => $value) {
             $content = $this->replaceBaseClassPlaceholders($key, $value, $content);

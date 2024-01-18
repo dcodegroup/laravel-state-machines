@@ -8,7 +8,7 @@ trait CreatesStateClasses
 {
     protected function createStateClass(string $directory, array $data)
     {
-        $content = File::get(resource_path(__DIR__."/../../stubs/state.stub"));
+        $content = File::get(__DIR__."/../../../stubs/state_machine_interface.stub");
 
         foreach ($data as $key => $value) {
             $content = $this->replaceClassPlaceholders($key, $value, $content);

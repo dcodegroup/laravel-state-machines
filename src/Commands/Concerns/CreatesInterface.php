@@ -8,7 +8,7 @@ trait CreatesInterface
 {
     protected function createInterface(string $directory, string $model, array $data)
     {
-        $content = File::get(resource_path(__DIR__."/../../stubs/state_machine_interface.stub"));
+        $content = File::get(__DIR__."/../../../stubs/state_machine_interface.stub");
 
         foreach ($data as $key => $value) {
             $content = $this->replaceInterfacePlaceholders($key, $value, $content);
