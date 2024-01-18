@@ -40,3 +40,21 @@ This example will generate the following state machines under the `App/StateMach
 ## Configuring statuses on a model.
 
 Add the `HasStates` trait to your model and add a `status_id` column to that same model.
+Implement the state method on your model so it returns the user state contract.
+
+```php
+use App\StateMachines\Users\AcceptedState;
+use App\StateMachines\Users\PendingState;
+use App\StateMachines\Users\RejectedState;
+use http\Exception\InvalidArgumentException;
+
+public function state()
+{
+    return match($this->status->machine_name) {
+        'accepted' => new AcceptedState($this),
+        'pending' => new PendingState($this),
+        'rejected' => new RejectedState($this),
+        'default' => throw new InvalidArgumentException('Invalid state'),
+    }
+}
+```
