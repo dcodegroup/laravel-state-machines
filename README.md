@@ -22,3 +22,21 @@ You can publish the migration files for statuses and statusables via the artisan
 php artisan vendor:publish --tag=statuses-migrations
 ```
 This command allows you to customize and adapt the migrations according to your specific needs.
+
+## Creating state machines
+
+Run the `php artisan make:state-machine` command to create your first state machines. 
+The command accepts a model as an argument, states and transitions as options.
+
+```
+php artisan make:state-machine User --states=Accepted,Pending,Rejected --transitions=approve,deny
+```
+
+This example will generate the following state machines under the `App/StateMachines/User` directory:
+* UserStateContract.php which all transitions as methods.
+* BaseUserState.php which implements the UserStateContract and automatically throws an exception for each transition.
+* AcceptedState.php, PendingState.php, RejectedState.php which extend the BaseUserState.
+
+## Configuring statuses on a model.
+
+Add the `HasStates` trait to your model and add a `status_id` column to that same model.
