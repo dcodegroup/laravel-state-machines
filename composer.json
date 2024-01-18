@@ -1,6 +1,6 @@
 {
     "name": "dcodegroup/state-machines",
-    "description": "State machines for Laravel",
+    "description": "Generates state machine classes for Laravel",
     "license": "MIT",
     "keywords": [
         "state-machines",
@@ -18,23 +18,14 @@
     "require": {
         "php": "^8.2"
     },
-    "minimum-stability": "beta",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Dcodegroup\\StateMachines\\": "src"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Dcodegroup\\StateMachines\\Tests\\": "tests"
-        }
-    },
     "config": {
-        "allow-plugins": {
-            "pestphp/pest-plugin": true,
-            "phpstan/extension-installer": true
-        },
         "sort-packages": true
     }
 }
