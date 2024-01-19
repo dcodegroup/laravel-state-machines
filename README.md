@@ -40,7 +40,7 @@ This example will generate the following state machines under the `App/StateMach
 ## Configuring statuses on a model.
 
 Add the `HasStates` trait to your model and add a `status_id` column to that same model.
-Implement the state method on your model so it returns the user state contract.
+Implement the state method on your model, so it returns the user state contract.
 
 ```php
 use App\StateMachines\Users\AcceptedState;
@@ -58,3 +58,19 @@ public function state()
     }
 }
 ```
+
+## Using state
+
+Call the state method from you model and chain it with a transition method. e.g.
+
+```php
+$user->state()->approve();
+```
+
+## Default model state
+
+You can set a default state on your model by overriding the `$defaultState` property defined in the `HasStates` trait.
+
+## Assigning a state
+
+You can change the status of your model by using the `setStatus()` method which accepts a status machine name as an argument.

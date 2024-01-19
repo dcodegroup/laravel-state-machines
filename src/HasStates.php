@@ -10,16 +10,14 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait HasStates
 {
-    protected static string $defaultState = '';
+    protected string $defaultState = '';
+
+    abstract public function state();
 
     public static function bootHasStates()
     {
-        static::created(function ($model) {
-            self::setDefaultState($model);
-        });
+        static::created(fn ($model) => self::setDefaultState($model));
     }
-
-    abstract public function state();
 
     public function statusables(): MorphMany
     {
@@ -55,10 +53,10 @@ trait HasStates
 
     protected static function setDefaultState($model)
     {
-        if (! self::$defaultState) {
+        if (! $model->defaultState) {
             return;
         }
 
-        $model->setStatus(self::$defaultState);
+        $model->setStatus($model->defaultState);
     }
 }
