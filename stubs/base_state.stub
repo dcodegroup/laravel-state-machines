@@ -3,7 +3,7 @@
 namespace App\StateMachines\{{ pluralName }};
 
 use App\Models\{{ model }};
-use Dcodegroup\StateMachines\Exceptions\CannotTransitionToStateException;
+use Dcodegroup\LaravelStateMachines\Exceptions\CannotTransitionToStateException;
 
 class Base{{ model }}State implements {{ model }}StateContract
 {

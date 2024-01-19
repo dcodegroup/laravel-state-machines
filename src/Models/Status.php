@@ -1,6 +1,6 @@
 <?php
 
-namespace Dcodegroup\StateMachines\Models;
+namespace Dcodegroup\LaravelStateMachines\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;

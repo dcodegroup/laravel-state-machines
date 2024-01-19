@@ -1,10 +1,10 @@
 <?php
 
-namespace Dcodegroup\StateMachines\Commands;
+namespace Dcodegroup\LaravelStateMachines\Commands;
 
-use Dcodegroup\StateMachines\Commands\Concerns\CreatesBaseClass;
-use Dcodegroup\StateMachines\Commands\Concerns\CreatesInterface;
-use Dcodegroup\StateMachines\Commands\Concerns\CreatesStateClasses;
+use Dcodegroup\LaravelStateMachines\Commands\Concerns\CreatesBaseClass;
+use Dcodegroup\LaravelStateMachines\Commands\Concerns\CreatesInterface;
+use Dcodegroup\LaravelStateMachines\Commands\Concerns\CreatesStateClasses;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;

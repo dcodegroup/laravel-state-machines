@@ -1,6 +1,6 @@
 <?php
 
-namespace Dcodegroup\StateMachines\Commands\Concerns;
+namespace Dcodegroup\LaravelStateMachines\Commands\Concerns;
 
 use Illuminate\Support\Facades\File;
 

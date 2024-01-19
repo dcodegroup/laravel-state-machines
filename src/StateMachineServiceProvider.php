@@ -1,8 +1,8 @@
 <?php
 
-namespace Dcodegroup\StateMachines;
+namespace Dcodegroup\LaravelStateMachines;
 
-use Dcodegroup\StateMachines\Commands\MakeStateMachine;
+use Dcodegroup\LaravelStateMachines\Commands\MakeStateMachine;
 use Illuminate\Support\ServiceProvider;
 class StateMachineServiceProvider extends ServiceProvider
 {

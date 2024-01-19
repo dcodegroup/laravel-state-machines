@@ -1,5 +1,5 @@
 {
-    "name": "dcodegroup/state-machines",
+    "name": "dcodegroup/larave-state-machines",
     "description": "Generates state machine classes for Laravel",
     "license": "MIT",
     "keywords": [
@@ -14,7 +14,7 @@
             "role": "Developer"
         }
     ],
-    "homepage": "https://github.com/dcodegroup/state-machines",
+    "homepage": "https://github.com/dcodegroup/laravel-state-machines",
     "require": {
         "php": "^8.2",
         "illuminate/console": "^10.0",
@@ -25,7 +25,7 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Dcodegroup\\StateMachines\\": "src"
+            "Dcodegroup\\LaravelStateMachines\\": "src"
         }
     },
     "config": {
@@ -34,7 +34,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Dcodegroup\\StateMachines\\StateMachineServiceProvider"
+                "Dcodegroup\\LaravelStateMachines\\StateMachineServiceProvider"
             ]
         }
     }

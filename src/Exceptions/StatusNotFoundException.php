@@ -1,6 +1,6 @@
 <?php
 
-namespace Dcodegroup\StateMachines\Exceptions;
+namespace Dcodegroup\LaravelStateMachines\Exceptions;
 
 use Exception;
 

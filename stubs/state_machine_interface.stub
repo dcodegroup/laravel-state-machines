@@ -1,6 +1,6 @@
 <?php
 
-namespace App\StateMachines\{{ pluralName }};
+namespace App\LaravelStateMachines\{{ pluralName }};
 
 interface {{ model }}StateContract
 {

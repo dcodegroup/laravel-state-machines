@@ -1,10 +1,10 @@
 <?php
 
-namespace Dcodegroup\StateMachines;
+namespace Dcodegroup\LaravelStateMachines;
 
-use Dcodegroup\StateMachines\Exceptions\StatusNotFoundException;
-use Dcodegroup\StateMachines\Models\Status;
-use Dcodegroup\StateMachines\Models\Statusable;
+use Dcodegroup\LaravelStateMachines\Exceptions\StatusNotFoundException;
+use Dcodegroup\LaravelStateMachines\Models\Status;
+use Dcodegroup\LaravelStateMachines\Models\Statusable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
