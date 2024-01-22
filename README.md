@@ -37,6 +37,9 @@ This example will generate the following state machines under the `App/StateMach
 * BaseUserState.php which implements the UserStateContract and automatically throws an exception for each transition.
 * AcceptedState.php, PendingState.php, RejectedState.php which extend the BaseUserState.
 
+You can also change the default namespace for your model if they are not stored under `App/Models` with the `--namespace` 
+option. e.g. `--namespace=App\\ACL`.
+
 ## Configuring statuses on a model.
 
 Add the `HasStates` trait to your model and add a `status_id` column to that same model.
