@@ -10,7 +10,7 @@ trait CreatesBaseClass
     {
         $content = File::get(__DIR__."/../../../stubs/base_state.stub");
 
-        $data['namespace'] = $data['namespace'] === null ? 'App\\Models\\' : $data['namespace'];
+        $data['namespace'] = empty($data['namespace']) ? 'App\\Models\\' : reset($data['namespace']) . '\\';
 
         foreach ($data as $key => $value) {
             $content = $this->replaceBaseClassPlaceholders($key, $value, $content);
