@@ -2,7 +2,7 @@
 
 namespace App\StateMachines\{{ pluralName }};
 
-use App\Models\{{ model }};
+use {{ namespace }}{{ model }};
 use Dcodegroup\LaravelStateMachines\Exceptions\CannotTransitionToStateException;
 
 class Base{{ model }}State implements {{ model }}StateContract

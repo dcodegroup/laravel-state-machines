@@ -21,7 +21,8 @@ class MakeStateMachine extends Command
      * @var string
      */
     protected $signature = 'make:state-machine 
-                            {name : The model name attached to the state machine} 
+                            {name : The model name attached to the state machine}
+                            {--namespace= : Specify the model namespace if it is not under App\Models}
                             {--states= : Comma-separated list of states}
                             {--transitions= : Comma-separated list of transitions}';
 
@@ -40,8 +41,9 @@ class MakeStateMachine extends Command
         $model = Str::studly($this->argument('name'));
         $states = $this->parseListOption('states');
         $transitions = $this->parseListOption('transitions');
+        $namespace = $this->parseListOption('namespace');
 
-        $this->generateStateMachine($model, $states, $transitions);
+        $this->generateStateMachine($model, $states, $transitions, $namespace);
 
         $this->info('State machine generated successfully!');
     }
@@ -53,7 +55,7 @@ class MakeStateMachine extends Command
         return $optionValue ? explode(',', $optionValue) : [];
     }
 
-    protected function generateStateMachine($model, $states, $transitions)
+    protected function generateStateMachine($model, $states, $transitions, $namespace)
     {
         $pluralName = Str::plural($model);
         $name = Str::camel($model);
@@ -66,7 +68,7 @@ class MakeStateMachine extends Command
         $this->createInterface($directory, $model, compact('model', 'transitions', 'pluralName'));
 
         // Generate the base state file
-        $this->createBaseClass($directory, $model, compact('model', 'transitions', 'pluralName', 'name'));
+        $this->createBaseClass($directory, $model, compact('model', 'transitions', 'pluralName', 'name', 'namespace'));
 
         // Generate a file for each state
         foreach ($states as $state) {
