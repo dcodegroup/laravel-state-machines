@@ -1,5 +1,5 @@
 {
-    "name": "dcodegroup/larave-state-machines",
+    "name": "dcodegroup/laravel-state-machines",
     "description": "Generates state machine classes for Laravel",
     "license": "MIT",
     "keywords": [
