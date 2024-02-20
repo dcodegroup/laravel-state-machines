@@ -48,7 +48,7 @@ trait HasStates
             'statusable_type' => self::class,
         ]);
 
-        $this->update(['status_id', $status->id]);
+        $this->update(['status_id' => $status->id]);
     }
 
     protected static function setDefaultState($model)
