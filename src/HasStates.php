@@ -10,8 +10,6 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait HasStates
 {
-    protected string $defaultState;
-
     abstract public function state();
 
     public static function bootHasStates()
@@ -51,9 +49,14 @@ trait HasStates
         $this->update(['status_id' => $status->id]);
     }
 
+    protected function defaultState(): ?string
+    {
+        return null;
+    }
+
     protected static function setDefaultState($model)
     {
-        if (! $model->defaultState) {
+        if (! $model->defaultState()) {
             return;
         }
 
