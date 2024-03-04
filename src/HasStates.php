@@ -60,6 +60,6 @@ trait HasStates
             return;
         }
 
-        $model->setStatus($model->defaultState);
+        $model->setStatus($model->defaultState());
     }
 }
