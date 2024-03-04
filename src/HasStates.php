@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait HasStates
 {
-    protected string $defaultState = '';
+    protected string $defaultState;
 
     abstract public function state();
 
