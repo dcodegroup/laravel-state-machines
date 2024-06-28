@@ -13,7 +13,7 @@ at Laracon US Nashville in 2023.
 You can install the package via composer:
 
 ```
-composer require dcodegroup/laravel-state-machines:dev-main
+composer require dcodegroup/laravel-state-machines
 ```
 
 You can publish the migration files for statuses and statusables via the artisan command:
