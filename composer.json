@@ -17,9 +17,9 @@
     "homepage": "https://github.com/dcodegroup/laravel-state-machines",
     "require": {
         "php": "^8.2",
-        "illuminate/console": "^10.0",
-        "illuminate/database": "^10.0",
-        "illuminate/support": "^10.0"
+        "illuminate/console": "*",
+        "illuminate/database": "*",
+        "illuminate/support": "*"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
